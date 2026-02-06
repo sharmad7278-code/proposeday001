@@ -1,0 +1,259 @@
+/* =========================
+   RESET & BASE
+========================= */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  min-height: 100vh;
+  font-family: 'Poppins', sans-serif;
+  background: linear-gradient(135deg, #ffd6e8, #ffeaf3);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #5b2a42;
+  overflow: hidden;
+}
+
+/* =========================
+   FLOATING LAYER
+========================= */
+#floating-layer {
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 1;
+}
+
+/* =========================
+   MAIN WRAPPER
+========================= */
+.wrapper {
+  width: 92%;
+  max-width: 430px;
+  position: relative;
+  z-index: 2;
+}
+
+/* =========================
+   SCREENS
+========================= */
+.screen {
+  display: none;
+  background: rgba(255, 255, 255, 0.88);
+  border-radius: 28px;
+  padding: 36px 26px;
+  text-align: center;
+  animation: fadeUp 0.7s ease;
+  box-shadow: 0 25px 45px rgba(255, 174, 200, 0.45);
+}
+
+.screen.active {
+  display: block;
+}
+
+/* =========================
+   TYPOGRAPHY
+========================= */
+h1 {
+  font-family: 'Playfair Display', serif;
+  font-size: 2.2rem;
+  margin-bottom: 14px;
+}
+
+p {
+  font-size: 1.05rem;
+  line-height: 1.6;
+  margin-bottom: 22px;
+}
+
+.soft-text {
+  font-size: 0.95rem;
+  opacity: 0.85;
+  margin-bottom: 26px;
+}
+
+.caption {
+  font-size: 0.95rem;
+  margin-top: 10px;
+}
+
+.typing {
+  min-height: 70px;
+  font-size: 1.05rem;
+}
+
+/* =========================
+   BUTTONS
+========================= */
+.primary {
+  background: #ff7aa2;
+  color: #fff;
+  border: none;
+  padding: 13px 32px;
+  border-radius: 30px;
+  font-size: 1rem;
+  cursor: pointer;
+  box-shadow: 0 12px 28px rgba(255, 122, 162, 0.45);
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.primary:hover {
+  transform: scale(1.08);
+  box-shadow: 0 16px 32px rgba(255, 122, 162, 0.6);
+}
+
+.secondary {
+  background: #fff;
+  color: #ff7aa2;
+  border: 1px solid #ff7aa2;
+  padding: 13px 32px;
+  border-radius: 30px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: transform 0.25s ease;
+}
+
+.secondary:hover {
+  transform: scale(1.05);
+}
+
+.buttons {
+  display: flex;
+  justify-content: center;
+  gap: 18px;
+  margin-bottom: 10px;
+}
+
+.hint {
+  font-size: 0.8rem;
+  opacity: 0.65;
+}
+
+/* =========================
+   PULSE (YES BUTTON)
+========================= */
+.pulse {
+  animation: pulse 2.5s infinite;
+}
+
+@keyframes pulse {
+  0% { box-shadow: 0 0 0 0 rgba(255,122,162,0.5); }
+  70% { box-shadow: 0 0 0 16px rgba(255,122,162,0); }
+  100% { box-shadow: 0 0 0 0 rgba(255,122,162,0); }
+}
+
+/* =========================
+   SLIDESHOW
+========================= */
+.slideshow {
+  width: 100%;
+  height: 220px;
+  border-radius: 18px;
+  overflow: hidden;
+  margin-bottom: 18px;
+}
+
+.slideshow img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* =========================
+   FINAL SCREEN
+========================= */
+.final h1 {
+  font-size: 2rem;
+}
+
+.final-text {
+  font-size: 1.05rem;
+  margin-bottom: 18px;
+}
+
+/* =========================
+   NAME REVEAL
+========================= */
+.name {
+  margin-top: 14px;
+  font-size: 1.1rem;
+  opacity: 0;
+  transform: translateY(12px);
+  transition: all 1.2s ease;
+}
+
+.name span {
+  color: #ff7aa2;
+  font-weight: 600;
+}
+
+/* =========================
+   FLOATING HEARTS
+========================= */
+.heart {
+  position: absolute;
+  bottom: -20px;
+  font-size: 18px;
+  animation: floatUp 6s linear infinite;
+  opacity: 0.9;
+}
+
+@keyframes floatUp {
+  to {
+    transform: translateY(-120vh) scale(1.4);
+    opacity: 0;
+  }
+}
+
+/* =========================
+   CONFETTI (YES ONLY)
+========================= */
+.confetti {
+  position: fixed;
+  top: -10px;
+  font-size: 18px;
+  animation: fall linear forwards;
+  z-index: 3;
+}
+
+@keyframes fall {
+  to {
+    transform: translateY(110vh) rotate(360deg);
+    opacity: 0;
+  }
+}
+
+/* =========================
+   ANIMATIONS
+========================= */
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(8px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* =========================
+   MOBILE OPTIMIZATION
+========================= */
+@media (max-width: 480px) {
+  h1 {
+    font-size: 1.9rem;
+  }
+
+  p {
+    font-size: 0.95rem;
+  }
+
+  .screen {
+    padding: 30px 22px;
+  }
+}

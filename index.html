@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>For You 💗</title>
+
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500&family=Poppins:wght@300;400;500&display=swap" rel="stylesheet">
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<!-- Background Music -->
+<audio id="bgMusic" loop>
+  <source src="Matthew_Ifield_-_I_Think_They_Call_This_Love_-_Cover_(mp3.pm).mp3" type="audio/mpeg">
+</audio>
+
+<!-- Floating Layer (hearts, confetti, sparkles) -->
+<div id="floating-layer"></div>
+
+<!-- Main Wrapper -->
+<div class="wrapper">
+
+  <!-- ================= SCREEN 1 ================= -->
+  <section class="screen active" id="screen1">
+    <h1>Hey you 🥺💗</h1>
+    <p class="typing" id="typing"></p>
+
+    <p class="soft-text">
+      Take a deep breath… this is just for you.
+    </p>
+
+    <button class="primary" onclick="goNext()">Continue</button>
+  </section>
+
+  <!-- ================= SCREEN 2 ================= -->
+  <section class="screen" id="screen2">
+    <p>
+      Even though we’re miles apart,<br>
+      you somehow feel closer than anyone else.
+    </p>
+
+    <p class="soft-text">
+      Distance never stopped my feelings for you.
+    </p>
+
+    <button class="primary" onclick="goNext()">Next</button>
+  </section>
+
+  <!-- ================= SCREEN 3 ================= -->
+  <section class="screen" id="screen3">
+    <div class="slideshow">
+      <img id="slide" src="img1.jpeg" alt="Memory">
+    </div>
+
+    <p class="caption">
+      Little moments I keep in my heart 💕
+    </p>
+
+    <button class="primary" onclick="goNext()">Next</button>
+  </section>
+
+  <!-- ================= SCREEN 4 (PROPOSAL) ================= -->
+  <section class="screen proposal" id="proposal">
+    <h1>Will you be mine? 💍</h1>
+
+    <p class="soft-text">
+      Not just today… but every ordinary and special day.
+    </p>
+
+    <div class="buttons">
+      <button class="primary pulse" id="yes">Yes 💖</button>
+      <button class="secondary" id="no">No 🙈</button>
+    </div>
+
+    <p class="hint">
+      (Be gentle… my heart is on the line 🥺)
+    </p>
+  </section>
+
+  <!-- ================= SCREEN 5 (YES ONLY) ================= -->
+  <section class="screen final" id="yesScreen">
+    <h1>Yayyy... 🥹💞</h1>
+
+    <p class="final-text">
+      You just made my heart so, so happy.<br>
+      I promise to choose you — always.
+    </p>
+
+    <!-- Name Reveal -->
+    <p id="herName" class="name">
+      I choose you, <span>HerName</span> 💕
+    </p>
+
+    <!-- Extra emotional lines -->
+    <p class="soft-text">
+      Right now, wherever you are,<br>
+      this moment belongs to us.
+    </p>
+  </section>
+
+</div>
+
+<!-- JS -->
+<script src="script.js"></script>
+</body>
+</html>
